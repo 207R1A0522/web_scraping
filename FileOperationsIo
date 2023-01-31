@@ -1,0 +1,31 @@
+import csv
+from datetime import datetime
+import requests
+from bs4 import BeautifulSoup
+import openpyxl
+
+excel=openpyxl.Workbook()
+print(excel.sheetnames)
+sheet=excel.active
+sheet.title='C Language file operationss'
+print(excel.sheetnames)
+sheet.append(['Questions','Explanation','Option-a','Option-b','Option-c','Option-d'])
+try:
+    url=('https://www.examtray.com/c-questions/c-mcq-questions-and-answers-file-operations-io')
+    response=requests.get(url)
+    soup=BeautifulSoup(response.text,'html.parser')
+    allvalues=['row-1 views-row','row-2 views-row','row-3 views-row','row-4 views-row','row-5 views-row','row-6 views-row','row-7 views-row','row-8 views-row','row-9 views-row','row-10 views-row','row-11 views-row','row-12 views-row','row-13 views-row','row-14 views-row','row-15 views-row','row-16 views-row','row-17 views-row','row-18 views-row','row-19 views-row','row-20 views-row']
+    for i in allvalues:
+        value=soup.find('div',i)
+        ques=value.find('div','views-field views-field-field-questionn').text.strip('1)2)3)4)5)6)7)8)9)10)11)12)13)14)15)16)17)18)19)20)')
+        explanation=value.find('div','views-field views-field-field-explanation').text.strip('Explanation:')
+        optiona=value.find('div','views-field views-field-field-a').text.strip('A)')
+        optionb=value.find('div','views-field views-field-field-b').text.strip('B)')
+        optionc=value.find('div','views-field views-field-field-c').text.strip('C)')
+        optiond=value.find('div','views-field views-field-field-d').text.strip('D)')
+        crtopt=value.find('div','field-content ans').text
+        print(ques,explanation,optiona,optionb,optionc,optiond,crtopt)
+        sheet.append([ques,explanation,optiona,optionb,optionc,optiond,crtopt])
+except Exception as e:
+    print(e)
+excel.save('C19.xlsx')

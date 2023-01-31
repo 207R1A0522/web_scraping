@@ -1,0 +1,12 @@
+from bs4 import BeautifulSoup
+import requests
+import pandas as pd
+url = 'https://www.flipkart.com/mobiles/pr?sid=tyy,4io&otracker=categorytree'
+r = requests.get(url)
+s = BeautifulSoup(r.content, 'html.parser')
+r.status_code
+MoblieDetails = []
+for text in s.find_all('div',{'class':'_1UoZlX'}):
+    b = text
+    MoblieDetails.append(b)
+print(MoblieDetails[0].prettify())
