@@ -1,0 +1,209 @@
+Questions,Explanation,Option-a,Option-b,Option-c,Option-d,
+ What is an Array in C language.?,"
+ 
+", A group of elements of same data type.,"
+B) An array contains more than one element
+","
+C) Array elements are stored in memory in continuous or contiguous locations.
+","
+D) All the above.
+",D
+ Choose a correct statement about C language arrays.,"
+ 
+", An array address is the address of first element of array itself.,"
+B) An array size must be declared if not initialized immediately.
+","
+C) Array size is the sum of sizes of all elements of the array.
+","
+D) All the above
+",D
+ What are the Types of Arrays.?,"
+ 
+"," int, long, float, double","
+B) struct, enum
+","
+C) char
+","
+D) All the above
+",D
+ An array Index starts with.?,"
+ 
+", -1,"
+B) 0
+","
+C) 1
+","
+D) 2
+",B
+ Choose a correct statement about C language arrays.,"
+ 
+", An array size can not changed once it is created.,"
+B) Array element value can be changed any number of times
+","
+C) To access Nth element of an array students, use students[n-1] as the starting index is 0.
+","
+D) All the above
+",D
+" What is the output of C Program.? int main() { int a[]; a[4] = {1,2,3,4}; printf(""%d"", a[0]); }","
+Explanation:
+If you do not initialize an array, you must mention ARRAY SIZE.
+
+", 1,"
+B) 2
+","
+C) 4
+","
+D) Compiler error
+",D
+" What is the output of C Program.? int main() { int a[] = {1,2,3,4}; int b[4] = {5,6,7,8}; printf(""%d,%d"", a[0], b[0]); }","
+Explanation:
+It is perfectly allowed to skip array size if you are initializing at the same time. a[0] is first element.
+int a[] = {1,2,3,4};
+
+
+"," 1,5","
+B) 2,6
+","
+C) 0 0
+","
+D) Compiler error
+",A
+" What is the output of C Program.? int main() { char grade[] = {'A','B','C'}; printf(""GRADE=%c, "", *grade); printf(""GRADE=%d"", grade); }","
+Explanation:
+Variable grade = address of first element. *grade is the first element of array i.e grade[0].
+
+"," GRADE=some address of array, GRADE=","
+B) GRADE=A, GRADE=some address of array
+","
+C) GRADE=A, GRADE=A
+","
+D) Compiler error
+",B
+" What is the output of C program.? int main() { char grade[] = {'A','B','C'}; printf(""GRADE=%d, "", *grade); printf(""GRADE=%d"", grade[0]); }","
+Explanation:
+*grade == grade[0]. We are printing with %d not with %c. So, ASCII value is printed.
+
+", A ,"
+B) 65 A
+","
+C) 65 65
+","
+D) None of the above
+",C
+" What is the output of C program.? int main() { float marks[3] = {90.5, 92.5, 96.5}; int a=0; while(a<3) { printf(""%.2f,"", marks[a]); a++; } }","
+Explanation:
+0.2%f prints only two decimal points. It is allowed to use float values with arrays.
+
+", 90.5 92.5 96.5,"
+B) 90.50 92.50 96.50
+","
+C) 0.00 0.00 0.00
+","
+D) Compiler error
+",B
+" What is the output of C Program.? int main() { int a[3] = {10,12,14}; a[1]=20; int i=0; while(i<3) { printf(""%d "", a[i]); i++; } }","
+Explanation:
+a[i] is (i+1) element. So a[1] changes the second element.
+
+", 20 12 14,"
+B) 10 20 14
+","
+C) 10 12 20
+","
+D) Compiler error
+",B
+" What is the output of C program.? int main() { int a[3] = {10,12,14}; int i=0; while(i<3) { printf(""%d "", i[a]); i++; } }","
+Explanation:
+a[k] == k[a]. Use any notation to refer to array elements.
+
+", 14 12 10,"
+B) 10 10 10
+","
+C) 10 12 14
+","
+D) None of the above
+",C
+" What is the output of C Program.? int main() { int a[3] = {20,30,40}; a[0]++; int i=0; while(i<3) { printf(""%d "", i[a]); i++; } }","
+Explanation:
+You can use increment and decrement operators on array variables too.
+
+", 20 30 40,"
+B) 41 30 20
+","
+C) 21 30 40
+","
+D) None of the above
+",C
+" What is the output of C program with arrays.? int main() { int a[3] = {20,30,40}; int b[3]; b=a; printf(""%d"", b[0]); }","
+Explanation:
+You can assign one array variable to other.
+
+", 20,"
+B) 30
+","
+C) address of 0th element.
+","
+D) Compiler error
+",D
+" What is the output of C Program with arrays and pointers.? int main() { int a[3] = {20,30,40}; int (*p)[3]; p=&a; printf(""%d"", (*p)[0]); }","
+Explanation:
+You can not directly assign one array variable to other. But using an array pointer, you can point to the another array. (*p) parantheses are very important.
+
+", 20,"
+B) 0
+","
+C) address of element 20
+","
+D) Compiler error
+",A
+" What is the output of C program with arrays and pointers.? int main() { int a[3] = {20,30,40}; int *p[3]; p=&a; printf(""%d"", *p[0]); }","
+Explanation:
+To point to an array, array pointer declaration should be like (*p)[3] with parantheses. It points to array of 3 elements.
+
+", 20,"
+B) address of element 20
+","
+C) Garbage value
+","
+D) Compiler error
+",D
+" What is the output of C program with arrays and pointers.? int main() { int a[3] = {20,30,40}; printf(""%d"", *(a+1)); }","
+Explanation:
+*(a+0) == *a == a[0]. So *(a+1) is element at index 1. Index starts with ZERO.
+
+", 20,"
+B) 30
+","
+C) 40
+","
+D) Compiler error
+",B
+ What is an array Base Address in C language.?,"
+ 
+", Base address is the address of 0th index element.,"
+B) An array b[] base address is &b[0]
+","
+C) An array b[] base address can be printed with printf(""%d"", b);
+","
+D) All the above
+",D
+" What is the output of C Program with arrays and pointers.? void change(int[]); int main() { int a[3] = {20,30,40}; change(a); printf(""%d %d"", *a, a[0]); } void change(int a[]) { a[0] = 10; }","
+Explanation:
+Notice that function change() is able to change the value of a[0] of main(). It uses Call By Reference. So changes in called function affected the original values.
+
+", 20 20,"
+B) 10 20
+","
+C) 10 10
+","
+D) 20 30
+",C
+ An entire array is always passed by ___ to a called function.,"
+ 
+", Call by value,"
+B) Call by reference
+","
+C) Address relocation
+","
+D) Address restructure
+",B
